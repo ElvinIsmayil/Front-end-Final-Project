@@ -4,7 +4,6 @@ import { endpoints} from "./constants.js";
 document.addEventListener('DOMContentLoaded', function() {
     swiperCarousel()
     getProducts()
-    drawCards()
 });
 
 function swiperCarousel(){
@@ -30,7 +29,6 @@ function swiperCarousel(){
             },
         },
     });
-    
 }
 
 async function getProducts(){
@@ -42,27 +40,29 @@ async function getProducts(){
     }
 }
 
-
-
 function convertRatingToStars(rating) {
-    const fullStar = '★';  // Full star character
-    const emptyStar = '☆'; // Empty star character
-    const halfStar = '⯪';  // Half star character, or use an icon if preferred
-
+    const roundedRating = Math.round(rating * 2) / 2;
     let stars = '';
+    
     for (let i = 1; i <= 5; i++) {
-        if (i <= Math.floor(rating)) {
-            stars += fullStar;  // Full star for a full rating
-        } else if (i <= rating) {
-            stars += halfStar;  // Half star if the rating is in between
+        if (i <= Math.floor(roundedRating)) {
+            stars += '<span class="jdgm-star jdgm--on"></span>';
+        } else if (i - 0.5 === roundedRating) {
+            stars += '<span class="jdgm-star jdgm--half"></span>';
         } else {
-            stars += emptyStar;  // Empty star for remaining
+            stars += '<span class="jdgm-star jdgm--off"></span>';
         }
     }
+    
     return stars;
 }
 
 function drawCards(products) {
+    if (!products || !Array.isArray(products)) {
+        console.error("Error: products is not an array or is undefined");
+        return;
+    }
+    
     const cards = document.getElementById("cards");
 
     products.forEach(product => {
@@ -71,7 +71,6 @@ function drawCards(products) {
 
         const hasHoverImage = product.hoverImage && product.hoverImage.trim() !== '';
 
-        // Convert rating to stars (assuming product has a 'rating' property)
         const starRating = convertRatingToStars(product.rating);
 
         cardWrapper.innerHTML = `
@@ -84,7 +83,7 @@ function drawCards(products) {
                     <h5 class="card-title">${product.name}</h5>
                     <span class="text-muted">m. ${product.price}</span>
                     <div class="rating">
-                        ${starRating} <!-- Insert star rating -->
+                        ${starRating}
                     </div>
                 </div>
             </div>
