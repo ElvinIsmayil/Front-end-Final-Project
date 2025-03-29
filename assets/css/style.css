@@ -2,12 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', 'Jost', sans-serif;
+    font-family: 'Jost', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
     overflow-x: hidden;
 }
+
+/* Navbar */
 
 .navbar .container {
     position: relative;
@@ -26,6 +28,8 @@ body {
 .navbar-brand img {
     max-width: 100%;
 }
+
+/* Topbar */
 
 .social-icons a {
     margin-left: 15px;
@@ -52,6 +56,8 @@ body {
     color: #e60023 !important; 
 }
 
+/* Swiper */
+
 .slider-section {
     width: 100%;
     padding: 20px 0;
@@ -61,6 +67,7 @@ body {
     max-width: 100%;
     padding: 0 15px;
 }
+
 
 .swiper {
     width: 100%;
@@ -200,6 +207,8 @@ body {
     }
 }
 
+/* Card */
+
 .card {
     padding: 15px;
 }
@@ -256,4 +265,44 @@ body {
 .top-collection-btn{
     border-bottom: 1px solid black;
     padding-bottom: 4px;
+}
+
+.swiper-overlay{
+    margin-top: 10rem;
+    margin-left: 3.5rem;
+}
+
+.animated-text {
+    opacity: 0;                     /* Initially hidden */
+    transform: translateY(50px);    /* Positioned slightly below */
+    animation: slideUp 1s ease-in-out forwards;  /* Upward slide animation */
+}
+
+.swiper-overlay .animated-text:nth-child(1) {
+    animation-delay: 0.1s;  /* Slight delay for a quick start */
+}
+.swiper-overlay .animated-text:nth-child(2) {
+    animation-delay: 0.2s;  /* Shorter interval for smoother flow */
+}
+.swiper-overlay .animated-text:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.swiper-overlay .animated-text:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);  /* Start off-screen (below position) */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);     /* End at original position */
+    }
+}
+
+.letter-spacing{
+    letter-spacing: 2px;
 }
