@@ -4,7 +4,7 @@
       "id": "1",
       "name": "Half sleeve T-shirt",
       "price": 46100,
-      "rating": 4,
+      "rating": 4.5,
       "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_05_940x.png?v=1733818297",
       "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_03_533x.png?v=1733810921"
     },
@@ -12,7 +12,7 @@
       "id": "2",
       "name": "Brown hat craft",
       "price": 39200,
-      "rating": 4,
+      "rating": 2,
       "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_05_940x.png?v=1733818297",
       "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_03_533x.png?v=1733810921"
       
