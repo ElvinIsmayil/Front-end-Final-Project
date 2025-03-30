@@ -36,8 +36,44 @@ function drawCards(products) {
         console.error("Error: products is not an array or is undefined");
         return;
     }
+
+    const newCards = document.getElementById("new-arrival-cards")
+    let count = 0;
+
+    products.forEach(product => {
+        count++;
+        const cardWrapper = document.createElement("div");
+        cardWrapper.className = "col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center mb-3";
+        const hasHoverImage = product.hoverImage && product.hoverImage.trim() !== '';
+
+
+        const starRating = convertRatingToStars(product.rating);
+
+        if (count>4){
+            return;
+        }
+        else{
+            cardWrapper.innerHTML = `
+                <div class="card border-0">
+                    <div class="card-img-container position-relative">
+                        <img src="${product.image}" class="card-img-top primary-img" alt="${product.name}">
+                        ${hasHoverImage ? `<img src="${product.hoverImage}" class="card-img-top hover-img" alt="${product.name} hover">` : ''}
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">${product.name}</h5>
+                        <span class="text-muted">m. ${product.price}</span>
+                        <div class="rating">
+                            ${starRating}
+                        </div>
+                    </div>
+                </div>
+            `;
     
-    const cards = document.getElementById("cards");
+            newCards.appendChild(cardWrapper);
+
+        }
+
+    })
 
     products.forEach(product => {
         const cardWrapper = document.createElement("div");

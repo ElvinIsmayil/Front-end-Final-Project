@@ -13,7 +13,8 @@
       "name": "Brown hat craft",
       "price": 39200,
       "rating": 4,
-      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_05_940x.png?v=1733818297"
+      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_05_940x.png?v=1733818297",
+      "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_03_533x.png?v=1733810921"
       
     },
     {
@@ -29,6 +30,7 @@
       "name": "Retro Tie-Dye Color Splash T-Shirt",
       "price": 38900,
       "rating": 4,
+
       "image": "//rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922 720w",
       "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_03_533x.png?v=1733810921"
     },

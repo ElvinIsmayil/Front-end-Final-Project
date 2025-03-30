@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     swiperCarousel();
+
 });
 
 function swiperCarousel() {
@@ -22,20 +23,17 @@ function swiperCarousel() {
         },
     });
 
-    // Animation on slide change
     swiper.on('slideChangeTransitionStart', function () {
         const allAnimatedTexts = document.querySelectorAll('.animated-text');
         allAnimatedTexts.forEach(text => {
-            text.classList.remove('active');  // Reset animations by removing the 'active' class
-            void text.offsetWidth;            // Force reflow to restart the animation
+            text.classList.remove('active');  
+            void text.offsetWidth;            
         });
 
-        // Apply the 'active' class to the visible slide texts
         setTimeout(() => {
             const activeSlideTexts = document.querySelectorAll('.swiper-slide-active .animated-text');
             activeSlideTexts.forEach(text => text.classList.add('active'));
-        }, 100);  // Slight delay to ensure correct DOM update timing
+        }, 100);  
     });
 }
-
 

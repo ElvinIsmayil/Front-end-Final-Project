@@ -11,7 +11,19 @@ body {
 
 /* Navbar */
 
-.navbar .container {
+nav .container-fluid{
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+
+body #navbar {
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+}
+
+.navbar .container-fluid {
     position: relative;
 }
 
@@ -305,4 +317,27 @@ body {
 
 .letter-spacing{
     letter-spacing: 2px;
+}
+
+.announcement {
+    position: absolute;
+    display: flex;
+    white-space: nowrap;
+    font-size: 20px;
+    font-weight: 300;
+    animation: announcement 25s linear infinite;  /* Continuous scrolling */
+}
+
+@keyframes announcement {
+    from {
+        transform: translateX(0%);  /* Start from the right */
+    }
+    to {
+        transform: translateX(-100%);  /* Move left and out of view */
+    }
+}
+
+/* Ensure the spacing between elements in the ticker */
+.announcement > * {
+    padding-right: 30px;  /* Space between items */
 }
