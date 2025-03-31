@@ -1,195 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="./assets/lib/bootstrap/css/bootstrap.min.css"
-    />
-    <link rel="stylesheet" href="./assets/lib/font-awesome/all.css" />
-    <link rel="stylesheet" href="./assets/lib/swiper/swiper-bundle.min.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rivon</title>
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./assets/lib/font-awesome/all.css" />
+  <link rel="stylesheet" href="./assets/lib/swiper/swiper-bundle.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
 
-    
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Rivon</title>
-  </head>
-
-  <body>
-    <header>
+<body>
+  <!-- Header Section -->
+  <header class="site-header">
+    <!-- Topbar -->
+    <section class="topbar">
       <div class="bg-black py-2">
-        <div class="container-fluid px-5">
+        <div class="container-fluid px-md-5">
           <div class="row align-items-center">
+            <!-- Contact Information -->
             <div class="col-md-4 d-none d-md-block">
-              <a
-                href="tel:+0123456789"
-                class="text-white text-decoration-none me-3 small"
-              >
+              <a href="tel:+0123456789" class="text-white text-decoration-none me-3 small">
                 <i class="fa-thin fa-phone-volume"></i> +0123456789
               </a>
-              <a
-                href="mailto:Digizen@domain.com"
-                class="text-white text-decoration-none small"
-              >
+              <a href="mailto:Digizen@domain.com" class="text-white text-decoration-none small">
                 <i class="fa-light fa-envelope me-1"></i> Digizen@domain.com
               </a>
             </div>
-            <div class="col-6 col-md-4 text-center text-white small">
+            
+            <!-- Free Delivery Notice -->
+            <div class="col-6 col-md-4 text-center text-white small free-delivery-notice">
               Free Delivery on <strong>orders</strong> over $260
             </div>
-            <div
-              class="col-6 col-md-4 d-flex justify-content-end align-items-center"
-            >
-              <div class="dropdown me-2 me-md-3">
-                <a
-                  class="text-white dropdown-toggle text-decoration-none small"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                >
-                  AZN ₼
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">USD $</a></li>
-                  <li><a class="dropdown-item" href="#">EUR €</a></li>
-                </ul>
+            
+            <!-- Topbar Right Section -->
+            <div class="col-6 col-md-4 d-flex justify-content-end align-items-center">
+              <!-- Currency and Language Selectors -->
+              <div class="topbar-selectors d-flex align-items-center me-3">
+                <!-- Currency Selector -->
+                <div class="nav-item dropdown mx-1">
+                  <a class="nav-link dropdown-toggle px-2 text-white small" href="#" id="currencyDropdown">
+                    $ USD <i class="fas fa-chevron-down ms-1 small"></i>
+                  </a>
+                  <div class="dropdown-menu fade-down">
+                    <a class="dropdown-item" href="#">₼ AZN</a>
+                    <a class="dropdown-item active" href="#">$ USD</a>
+                    <a class="dropdown-item" href="#">€ EUR</a>
+                  </div>
+                </div>
+                
+                <!-- Language Selector -->
+                <div class="nav-item dropdown mx-1">
+                  <a class="nav-link dropdown-toggle px-2 text-white small" href="#" id="languageDropdown">
+                    English <i class="fas fa-chevron-down ms-1 small"></i>
+                  </a>
+                  <div class="dropdown-menu fade-down">
+                    <a class="dropdown-item active" href="#">English</a>
+                    <a class="dropdown-item" href="#">Azerbaijani</a>
+                    <a class="dropdown-item" href="#">Español</a>
+                  </div>
+                </div>
               </div>
-              <div class="dropdown me-2 me-md-3">
-                <a
-                  class="text-white dropdown-toggle text-decoration-none small"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                >
-                  English
-                </a>
-                <ul class="dropdown-menu dropdown-menu-end">
-                  <li><a class="dropdown-item" href="#">Français</a></li>
-                  <li><a class="dropdown-item" href="#">Español</a></li>
-                </ul>
-              </div>
+              
+              <!-- Social Icons -->
               <div class="d-none d-sm-flex social-icons">
-                <a href="#" class="text-white facebook">
-                  <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#" class="text-white instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-white youtube">
-                  <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#" class="text-white twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#" class="text-white pinterest">
-                  <i class="fab fa-pinterest"></i>
-                </a>
+                <a href="#" class="text-white facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-white twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white pinterest"><i class="fab fa-pinterest"></i></a>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <nav class="navbar navbar-expand-lg bg-white py-2 py-md-3">
-        <div class="container-fluid px-5">
-          <a href="./index.html" class="navbar-brand">
-            <img src="./assets/images/logo.png" alt="Rivon" class="img-fluid" />
-          </a>
-
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar2"
-            aria-controls="navbar2"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbar2">
-            <ul class="navbar-nav mx-auto">
-              <li class="nav-item mx-1">
-                <a class="nav-link px-2 px-md-3 fw-bold text-black" href="#"
-                  >Home <i class="fa-light fa-chevron-down ms-1 small"></i
-                ></a>
-              </li>
-              <li class="nav-item mx-1">
-                <a class="nav-link px-2 px-md-3 fw-bold text-black" href="#"
-                  >Shop <i class="fa-light fa-chevron-down ms-1 small"></i
-                ></a>
-              </li>
-              <li class="nav-item mx-1">
-                <a class="nav-link px-2 px-md-3 fw-bold text-black" href="#"
-                  >Pages <i class="fa-light fa-chevron-down ms-1 small"></i
-                ></a>
-              </li>
-              <li class="nav-item mx-1">
-                <a class="nav-link px-2 px-md-3 fw-bold text-black" href="#"
-                  >Blog <i class="fa-light fa-chevron-down ms-1 small"></i
-                ></a>
-              </li>
-              <li class="nav-item mx-1">
-                <a class="nav-link px-2 px-md-3 fw-bold text-black" href="#"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-            <div class="d-flex align-items-center mt-3 mt-lg-0">
-              <a href="#" class="text-dark ms-2 ms-md-3">
-                <i class="fa-light fa-magnifying-glass fs-5"></i>
+    </section>
+  
+    <!-- Main Navigation -->
+    <nav id="sticky-top-navbar" class="navbar navbar-expand-lg bg-white py-2 py-md-3">
+      <div class="container-fluid px-md-5">
+        <!-- Logo -->
+        <a href="./index.html" class="navbar-brand">
+          <img src="./assets/images/logo.png" alt="Rivon" class="img-fluid" />
+        </a>
+  
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar2" 
+          aria-controls="navbar2" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse" id="navbar2">
+          <ul class="navbar-nav mx-auto">
+            <!-- Home Dropdown -->
+            <li class="nav-item dropdown mx-1">
+              <a class="nav-link dropdown-toggle px-2 px-md-3 fw-bold text-black" href="#" id="homeDropdown">
+                Home <i class="fas fa-chevron-down ms-1 small"></i>
               </a>
-              <a href="#" class="text-dark ms-2 ms-md-3 position-relative">
-                <i class="fa-light fa-heart fs-5"></i>
-                <span
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
-                >
-                  0
-                </span>
+              <div class="dropdown-menu fade-down">
+                <a class="dropdown-item" href="#">Home Style 1</a>
+                <a class="dropdown-item" href="#">Home Style 2</a>
+                <a class="dropdown-item" href="#">Home Style 3</a>
+              </div>
+            </li>
+            
+            <!-- Shop Dropdown -->
+            <li class="nav-item dropdown mx-1">
+              <a class="nav-link dropdown-toggle px-2 px-md-3 fw-bold text-black" href="#" id="shopDropdown">
+                Shop <i class="fas fa-chevron-down ms-1 small"></i>
               </a>
-              <a href="#" class="text-dark ms-2 ms-md-3 position-relative">
-                <i class="fa-thin fa-bag-shopping"></i>
-                <span
-                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark"
-                >
-                  0
-                </span>
+              <div class="dropdown-menu fade-down">
+                <a class="dropdown-item" href="#">Shop Grid</a>
+                <a class="dropdown-item" href="#">Shop List</a>
+                <a class="dropdown-item" href="#">Product Details</a>
+                <a class="dropdown-item" href="#">Shopping Cart</a>
+                <a class="dropdown-item" href="#">Checkout</a>
+              </div>
+            </li>
+            
+            <!-- Pages Dropdown -->
+            <li class="nav-item dropdown mx-1">
+              <a class="nav-link dropdown-toggle px-2 px-md-3 fw-bold text-black" href="#" id="pagesDropdown">
+                Pages <i class="fas fa-chevron-down ms-1 small"></i>
               </a>
+              <div class="dropdown-menu fade-down">
+                <a class="dropdown-item" href="#">About Us</a>
+                <a class="dropdown-item" href="#">FAQ</a>
+                <a class="dropdown-item" href="#">404 Page</a>
+                <a class="dropdown-item" href="#">Coming Soon</a>
+              </div>
+            </li>
+            
+            <!-- Blog Dropdown -->
+            <li class="nav-item dropdown mx-1">
+              <a class="nav-link dropdown-toggle px-2 px-md-3 fw-bold text-black" href="#" id="blogDropdown">
+                Blog <i class="fas fa-chevron-down ms-1 small"></i>
+              </a>
+              <div class="dropdown-menu fade-down">
+                <a class="dropdown-item" href="#">Blog Grid</a>
+                <a class="dropdown-item" href="#">Blog List</a>
+                <a class="dropdown-item" href="#">Blog Details</a>
+              </div>
+            </li>
+            
+            <!-- Contact -->
+            <li class="nav-item mx-1">
+              <a class="nav-link px-2 px-md-3 fw-bold text-black" href="#">Contact</a>
+            </li>
+          </ul>
+          
+          <!-- Shop Icons -->
+          <div class="d-flex align-items-center mt-3 mt-lg-0 shop-icons">
+            <a href="#" class="text-dark ms-2 ms-md-3">
+              <i class="fa-light fa-magnifying-glass fs-5"></i>
+            </a>
+            <a href="#" class="text-dark ms-2 ms-md-3 position-relative">
+              <i class="fa-light fa-heart fs-5"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark favorite-count">0</span>
+            </a>
+            <a href="#" class="text-dark ms-2 ms-md-3 position-relative" id="cartToggle" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+              <i class="fa-thin fa-bag-shopping"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark cart-count">2</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- Shopping Cart Icon in Navbar -->
+
+
+<!-- Cart Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-end cart-offcanvas overlay-navbar" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+  <div class="offcanvas-header">
+    <div class="d-flex align-items-center">
+      <i class="fas fa-check-circle text-success me-2"></i>
+      <h5 class="offcanvas-title m-0" id="cartOffcanvasLabel">Your Shopping Cart</h5>
+    </div>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body px-0 py-0">
+    <!-- Cart Items Container -->
+    <div class="cart-items-container">
+      <!-- Cart Item 1 -->
+      <div class="cart-item py-4 px-3">
+        <div class="row g-0">
+          <div class="col-3">
+            <div class="cart-item-image-container bg-light">
+              <img src="./assets/images/Fashion_06.png" class="img-fluid" alt="Product">
+            </div>
+          </div>
+          <div class="col-9 ps-3">
+            <div class="cart-item-details">
+              <span class="text-uppercase small text-secondary fw-medium">FASHION</span>
+              <h6 class="cart-item-title mt-1 mb-2 fw-medium">Warm Fit-and-Flare Winter Dress with Fleece Lining</h6>
+              <div class="product-variant mb-2">
+                <span class="text-secondary">Color:</span> <span class="fw-medium">Pink</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="cart-item-price fw-semibold">$654.00</div>
+                <div class="quantity-selector">
+                  <div class="input-group quantity-input-group">
+                    <button class="btn btn-outline-secondary border-secondary-subtle quantity-btn" type="button">−</button>
+                    <input type="text" class="form-control text-center border-secondary-subtle quantity-input" value="1">
+                    <button class="btn btn-outline-secondary border-secondary-subtle quantity-btn" type="button">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="text-end mt-3">
+                <a href="#" class="text-decoration-underline text-dark small fw-medium remove-link">Remove</a>
+              </div>
             </div>
           </div>
         </div>
-      </nav>
-    </header>
+      </div>
+      
+      <div class="border-top my-0"></div>
+      
+      <!-- Cart Item 2 -->
+      <div class="cart-item py-4 px-3">
+        <div class="row g-0">
+          <div class="col-3">
+            <div class="cart-item-image-container bg-light">
+              <img src="./assets/images/Fashion_03.png" class="img-fluid" alt="Product">
+            </div>
+          </div>
+          <div class="col-9 ps-3">
+            <div class="cart-item-details">
+              <span class="text-uppercase small text-secondary fw-medium">FASHION</span>
+              <h6 class="cart-item-title mt-1 mb-2 fw-medium">Rainbow Gradient Unisex T-Shirt</h6>
+              <div class="product-variant mb-2">
+                <span class="text-secondary">Color:</span> <span class="fw-medium">Rainbow</span>, 
+                <span class="text-secondary">Size:</span> <span class="fw-medium">S</span>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="cart-item-price fw-semibold">$6,530.00</div>
+                <div class="quantity-selector">
+                  <div class="input-group quantity-input-group">
+                    <button class="btn btn-outline-secondary border-secondary-subtle quantity-btn" type="button">−</button>
+                    <input type="text" class="form-control text-center border-secondary-subtle quantity-input" value="10">
+                    <button class="btn btn-outline-secondary border-secondary-subtle quantity-btn" type="button">+</button>
+                  </div>
+                </div>
+              </div>
+              <div class="text-end mt-3">
+                <a href="#" class="text-decoration-underline text-dark small fw-medium remove-link">Remove</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Cart Summary -->
+    <div class="cart-summary p-3 pt-4 border-top mt-auto">
+      <div class="d-flex justify-content-between mb-4 align-items-center">
+        <h5 class="fw-semibold m-0">Subtotal</h5>
+        <h5 class="fw-semibold m-0">$7,718.00 USD</h5>
+      </div>
+      <div class="d-grid gap-3">
+        <a href="#" class="btn btn-outline-dark py-2 fw-medium">View Cart</a>
+        <a href="#" class="btn btn-dark py-2 fw-medium">Check Out</a>
+      </div>
+    </div>
+  </div>
+</div>
 
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Slider Section -->
     <section class="slider-section">
       <div class="container-fluid px-4">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
+            <!-- Slide 1 -->
             <div class="swiper-slide">
               <div class="card border-0">
-                <img
-                  src="./assets/images/slider1.png"
-                  alt="Slide 1"
-                  class="card-img"
-                />
+                <img src="./assets/images/slider1.png" alt="Slide 1" class="card-img" />
                 <div class="card-img-overlay swiper-overlay">
-                  <h5 class="card-text fw-normal animated-text letter-spacing">
-                    ELEGANCE IS ELIMINATION
-                  </h5>
-                  <h1 class="card-text display-2 fw-medium animated-text">
-                    Stay Ahead of
-                  </h1>
-                  <h1 class="card-text display-2 fw-medium animated-text">
-                    The Trends
-                  </h1>
-                  <p class="card-text animated-text">
-                    Tell your brand's story through images
-                  </p>
+                  <h5 class="card-text fw-normal animated-text letter-spacing">ELEGANCE IS ELIMINATION</h5>
+                  <h1 class="card-text display-2 fw-medium animated-text">Stay Ahead of</h1>
+                  <h1 class="card-text display-2 fw-medium animated-text">The Trends</h1>
+                  <p class="card-text animated-text">Tell your brand's story through images</p>
                   <button class="btn btn-dark p-2 px-3 rounded-1 animated-text">
                     COLLECTIONS <i class="fa-solid fa-arrow-up-right ms-1"></i>
                   </button>
@@ -197,26 +294,15 @@
               </div>
             </div>
 
+            <!-- Slide 2 -->
             <div class="swiper-slide">
               <div class="card border-0">
-                <img
-                  src="./assets/images/slider2.png"
-                  alt="Slide 1"
-                  class="card-img"
-                />
+                <img src="./assets/images/slider2.png" alt="Slide 2" class="card-img" />
                 <div class="card-img-overlay swiper-overlay">
-                  <h5 class="card-text fw-normal animated-text letter-spacing">
-                    ELEGANCE IS ELIMINATION
-                  </h5>
-                  <h1 class="card-text display-2 fw-medium animated-text">
-                    Stay Ahead of
-                  </h1>
-                  <h1 class="card-text display-2 fw-medium animated-text">
-                    The Trends
-                  </h1>
-                  <p class="card-text animated-text">
-                    Tell your brand's story through images
-                  </p>
+                  <h5 class="card-text fw-normal animated-text letter-spacing">ELEGANCE IS ELIMINATION</h5>
+                  <h1 class="card-text display-2 fw-medium animated-text">Stay Ahead of</h1>
+                  <h1 class="card-text display-2 fw-medium animated-text">The Trends</h1>
+                  <p class="card-text animated-text">Tell your brand's story through images</p>
                   <button class="btn btn-dark p-2 px-3 rounded-1 animated-text">
                     Shop Now <i class="fa-solid fa-arrow-up-right ms-1"></i>
                   </button>
@@ -224,86 +310,70 @@
               </div>
             </div>
           </div>
+          <!-- Navigation Buttons -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
       </div>
 
+      <!-- Features Cards -->
       <div class="container-fluid px-4 mt-5">
         <div class="row">
+          <!-- Feature 1 -->
           <div class="col-md-3">
             <div class="card border-0 p-3 mb-4">
               <div class="d-flex align-items-center">
                 <div class="me-3">
-                  <img
-                    src="./assets/images/icon1.png"
-                    style="width: 60px; height: 60px"
-                    alt=""
-                  />
+                  <img src="./assets/images/icon1.png" style="width: 60px; height: 60px" alt="Free Shipping" />
                 </div>
                 <div class="card-content">
-                  <h5 class="card-title fw-bold text-uppercase mb-1">
-                    FREE SHIPPING
-                  </h5>
+                  <h5 class="card-title fw-bold text-uppercase mb-1">FREE SHIPPING</h5>
                   <p class="text-muted mb-0">On all orders over $75.00</p>
                 </div>
               </div>
             </div>
           </div>
 
+          <!-- Feature 2 -->
           <div class="col-md-3">
             <div class="card border-0 p-3 mb-4">
               <div class="d-flex align-items-center">
                 <div class="me-3">
-                  <img
-                    src="./assets/images/icon2.png"
-                    style="width: 60px; height: 60px"
-                    alt=""
-                  />
+                  <img src="./assets/images/icon2.png" style="width: 60px; height: 60px" alt="Money Back" />
                 </div>
                 <div class="card-content">
-                  <h5 class="card-title fw-bold text-uppercase mb-1">
-                    MONEY BACK
-                  </h5>
+                  <h5 class="card-title fw-bold text-uppercase mb-1">MONEY BACK</h5>
                   <p class="text-muted mb-0">30 days money back guarantee</p>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Feature 3 -->
           <div class="col-md-3">
             <div class="card border-0 p-3 mb-4">
               <div class="d-flex align-items-center">
                 <div class="me-3">
-                  <img
-                    src="./assets/images/icon3.png"
-                    alt=""
-                    style="width: 60px; height: 60px"
-                  />
+                  <img src="./assets/images/icon3.png" style="width: 60px; height: 60px" alt="Friendly Support" />
                 </div>
                 <div class="card-content">
-                  <h5 class="card-title fw-bold text-uppercase mb-1">
-                    FRIENDLY SUPPORT
-                  </h5>
+                  <h5 class="card-title fw-bold text-uppercase mb-1">FRIENDLY SUPPORT</h5>
                   <p class="text-muted mb-0">Team always ready for you</p>
                 </div>
               </div>
             </div>
           </div>
+
+          <!-- Feature 4 -->
           <div class="col-md-3">
             <div class="card border-0 p-3 mb-4">
               <div class="d-flex align-items-center">
                 <div class="me-3">
-                  <img
-                    src="./assets/images/icon4.png"
-                    style="width: 60px; height: 60px"
-                    alt=""
-                  />
+                  <img src="./assets/images/icon4.png" style="width: 60px; height: 60px" alt="Secure Payments" />
                 </div>
                 <div class="card-content">
-                  <h5 class="card-title fw-bold text-uppercase mb-1">
-                    FREE SHIPPING
-                  </h5>
-                  <p class="text-muted mb-0">On all orders over $75.00</p>
+                  <h5 class="card-title fw-bold text-uppercase mb-1">SECURE PAYMENT</h5>
+                  <p class="text-muted mb-0">100% secure payment</p>
                 </div>
               </div>
             </div>
@@ -312,46 +382,69 @@
       </div>
     </section>
 
-    <section class="featured-products">
-      <div class="container">
-        <div class="text-center mb-2">
-          <h2>Featured Products</h2>
-          <span>We have your occasion covered</span>
-        </div>
-        <div class="row" id="cards"></div>
-      </div>
-    </section>
+    <!-- Featured Products Section -->
+<section class="featured-products mt-5 mb-5">
+  <div class="container-fluid px-md-5 px-lg-5 px-xl-5 max-width-1400">
+    <!-- Section Header -->
+    <div class="section-header text-center mb-5">
+      <h6 class="text-uppercase fw-bold text-muted letter-spacing-2 mb-2">Our Selection</h6>
+      <h2 class="fw-bold mb-3">Featured Products</h2>
+      <div class="title-separator mx-auto mb-3"></div>
+      <p class="text-muted col-md-8 mx-auto">Discover our handpicked selection of premium quality products designed to elevate your style and complement your lifestyle.</p>
+    </div>
+    
+    <!-- Product Filter Tabs (Optional) -->
+    <div class="product-filter mb-4">
+      <ul class="nav nav-pills justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link active" href="#" data-filter="all">All Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter="new">New Arrivals</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter="best">Best Sellers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-filter="sale">On Sale</a>
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Products Grid -->
+    <div class="products-grid">
+      <div class="row g-4" id="cards"></div>
+    </div>
+    
+    <!-- View All Products Button -->
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-outline-dark px-4 py-2">View All Products</a>
+    </div>
+  </div>
+</section>
 
+    <!-- Style Cards Section -->
     <section class="style-cards">
       <div class="container-fluid my-5 px-4">
         <div class="row">
+          <!-- Style Card 1 -->
           <div class="col-lg-6">
             <div class="card border-0">
-              <img
-                src="./assets/images/image1.png"
-                class="card-img"
-                alt="..."
-              />
+              <img src="./assets/images/image1.png" class="card-img" alt="Top Trends Style" />
               <div class="card-img-overlay">
-                <h5 class="card-title top-collection-margin fw-normal">
-                  TOP COLLECTIONS
-                </h5>
+                <h5 class="card-title top-collection-margin fw-normal">TOP COLLECTIONS</h5>
                 <h2 class="card-text text-justify">Top Trends Style</h2>
                 <span class="card-text top-collection-btn">Shop Now</span>
               </div>
             </div>
           </div>
+          
+          <!-- Style Card 2 -->
           <div class="col-lg-6">
             <div class="card border-0">
-              <img
-                src="./assets/images/image2.png"
-                class="card-img"
-                alt="..."
-              />
+              <img src="./assets/images/image2.png" class="card-img" alt="Here Your Style" />
               <div class="card-img-overlay">
-                <h5 class="card-title top-collection-margin fw-normal">
-                  PREMIUM-ONLINE-EXCLUSIVE
-                </h5>
+                <h5 class="card-title top-collection-margin fw-normal">PREMIUM-ONLINE-EXCLUSIVE</h5>
                 <h1 class="card-text text-justify">Here Your Style</h1>
                 <span class="card-text top-collection-btn">Shop Now</span>
               </div>
@@ -361,63 +454,129 @@
       </div>
     </section>
 
-    <div class="container border-opacity-100" >
-        
-        <div class="announcement d-flex">
-            <i class="mx-2">☆</i>
-            <p class="mx-2">SIGN UP AND GET 10% OFF YOUR FIRST ORDER </p>
-            <i class="mx-2">☆</i>
-            <p>FREE DELIVERY FOR ORDER OVER $120</p>
-            <i class="mx-2">☆</i>
-            <p class="mx-2">SIGN UP AND GET 10% OFF YOUR FIRST ORDER </p>
-            <i class="mx-2">☆</i>
-            <p>FREE DELIVERY FOR ORDER OVER $120</p>
-            <i class="mx-2">☆</i>
-            <p>FREE DELIVERY FOR ORDER OVER $120</p>
-            <i class="mx-2">☆</i>
-            <p>FREE DELIVERY FOR ORDER OVER $120</p>
-            <i class="mx-2">☆</i>
-            <p>FREE DELIVERY FOR ORDER OVER $120</p>
-            <i class="mx-2">☆</i>
+    <!-- Announcement Bar -->
+    <div class="announcement-container">
+      <div class="announcement-wrapper">
+        <!-- First set of announcements -->
+        <div class="announcement-content">
+          <p><i class="fa-solid fa-star"></i> SIGN UP AND GET 10% OFF YOUR FIRST ORDER <i class="fa-solid fa-star"></i></p>
+          <p><i class="fa-solid fa-star"></i> FREE DELIVERY FOR ORDER OVER $120 <i class="fa-solid fa-star"></i></p>
+          <p><i class="fa-solid fa-star"></i> SIGN UP AND GET 10% OFF YOUR FIRST ORDER <i class="fa-solid fa-star"></i></p>
+          <p><i class="fa-solid fa-star"></i> FREE DELIVERY FOR ORDER OVER $120 <i class="fa-solid fa-star"></i></p>
         </div>
+        <!-- Duplicate for seamless scrolling -->
+        <div class="announcement-content">
+          <p><i class="fa-solid fa-star"></i> SIGN UP AND GET 10% OFF YOUR FIRST ORDER <i class="fa-solid fa-star"></i></p>
+          <p><i class="fa-solid fa-star"></i> FREE DELIVERY FOR ORDER OVER $120 <i class="fa-solid fa-star"></i></p>
+          <p><i class="fa-solid fa-star"></i> SIGN UP AND GET 10% OFF YOUR FIRST ORDER <i class="fa-solid fa-star"></i></p>
+          <p><i class="fa-solid fa-star"></i> FREE DELIVERY FOR ORDER OVER $120 <i class="fa-solid fa-star"></i></p>
+        </div>
+      </div>
     </div>
 
-   
-
-
-    <section class="featured-products">
-      <div class="container" style="margin-top: 8rem;">
-        <div class="text-center">
-          <h2>New Arrivals</h2>
-          <span>We have your occasion covered</span>
+    <!-- New Arrivals Section -->
+<section class="new-arrivals py-5 my-5">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="section-header text-center mb-5">
+      <h6 class="text-uppercase fw-bold text-accent letter-spacing-2 mb-2">Fresh & Trendy</h6>
+      <h2 class="display-5 fw-bold mb-3">New Arrivals</h2>
+      <div class="title-separator mx-auto mb-4"></div>
+      <p class="text-muted col-md-8 mx-auto">The best quality products are waiting for you. Discover our latest collection crafted with premium materials and attention to detail.</p>
+    </div>
+    
+    <!-- Products Carousel Wrapper -->
+    <div class="position-relative">
+      <!-- Arrival Navigation (Optional) -->
+      <div class="arrivals-nav d-none d-md-block">
+        <button class="arrivals-prev position-absolute top-50 start-0 translate-middle-y btn btn-sm btn-light rounded-circle shadow-sm">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="arrivals-next position-absolute top-50 end-0 translate-middle-y btn btn-sm btn-light rounded-circle shadow-sm">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+      
+      <!-- Products Grid -->
+      <div class="new-arrivals-grid">
+        <div class="row g-4" id="new-arrival-cards"></div>
+      </div>
+    </div>
+    
+    <!-- Arrivals CTA -->
+    <div class="arrivals-cta text-center mt-5">
+      <a href="#" class="btn btn-dark px-4 py-2">Shop All New Arrivals</a>
+      <p class="text-muted small mt-3">Free shipping on orders over $120</p>
+    </div>
+  </div>
+</section>
+<!-- Promotional Banner -->
+<section class="promotional-banner py-4 py-md-5 bg-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-5 promotional-text pe-md-5">
+        <p class="text-uppercase mb-2 small">For Online Purchase</p>
+        <h1 class="display-2 fw-bold mb-4">50% OFF</h1>
+        <a href="#" class="btn btn-outline-dark rounded-0 px-4 py-2">
+          View Collections <i class="ms-2 fas fa-arrow-right"></i>
+        </a>
+        <div class="brand-watermark">FAISON</div>
+      </div>
+      <div class="col-md-7 ps-md-5 position-relative">
+        <div class="circular-logo">
+          <img src="./assets/images/fashion-logo.png" alt="Fashion Logo" class="position-absolute">
         </div>
-        <div class="row" id="new-arrival-cards">
-            
+        <img src="./assets/images/fashion.png" class="img-fluid" alt="Fashion Group" />
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- Brand Logos Section -->
+    <section class="brand-logos py-5 border">
+      <div class="container-fluid px-5">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-6 col-sm-4 col-md-2 text-center mb-4 mb-md-0">
+            <img src="./assets/images/brand-logo-1.png" alt="Brand Logo 1" class="img-fluid mx-auto brand-img" />
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 text-center mb-4 mb-md-0">
+            <img src="./assets/images/brand-logo-2.png" alt="Brand Logo 2" class="img-fluid mx-auto brand-img" />
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 text-center mb-4 mb-md-0">
+            <img src="./assets/images/brand-logo-3.png" alt="Brand Logo 3" class="img-fluid mx-auto brand-img" />
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 text-center mb-4 mb-md-0">
+            <img src="./assets/images/brand-logo-4.png" alt="Brand Logo 4" class="img-fluid mx-auto brand-img" />
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 text-center mb-4 mb-md-0">
+            <img src="./assets/images/brand-logo-5.png" alt="Brand Logo 5" class="img-fluid mx-auto brand-img" />
+          </div>
+          <div class="col-6 col-sm-4 col-md-2 text-center mb-4 mb-md-0">
+            <img src="./assets/images/brand-logo-6.png" alt="Brand Logo 6" class="img-fluid mx-auto brand-img" />
+          </div>
         </div>
       </div>
     </section>
+  </main>
 
-    <!-- <div class="card mb-3" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="..." class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-              <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
-            </div>
-          </div>
+  <!-- Add this to your HTML file -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Quick View</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-      </div> -->
-    
+        <div class="modal-body" id="modalContent"></div>
+      </div>
+    </div>
+  </div>
 
-    <script src="./assets/lib/font-awesome/all.js"></script>
-    <script src="./assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="./assets/lib/swiper/swiper-bundle.min.js"></script>
-    <script src="./node_modules/axios/dist/axios.min.js"></script>
-    <script src="./assets/js/main.js"></script>
-    <script src="./assets/js/app.js" type="module"></script>
-  </body>
+  <!-- Scripts -->
+  <script src="./assets/lib/font-awesome/all.js"></script>
+  <script src="./assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/lib/swiper/swiper-bundle.min.js"></script>
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <script src="./assets/js/main.js"></script>
+  <script src="./assets/js/app.js" type="module"></script>
+</body>
 </html>

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     swiperCarousel();
-
+    stickyHeader()
 });
 
 function swiperCarousel() {
@@ -37,3 +37,33 @@ function swiperCarousel() {
     });
 }
 
+ function stickyHeader(){
+    const topbar = document.querySelector('.topbar');
+    const navbar = document.querySelector('.navbar');
+    
+    const topbarHeight = topbar.offsetHeight;
+    const navbarHeight = navbar.offsetHeight;
+    
+    navbar.style.top = topbarHeight + 'px';
+    
+    document.body.style.paddingTop = (topbarHeight + navbarHeight) + 'px';
+    
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 0) {
+            navbar.classList.add('scrolled');
+            navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        } else {
+            navbar.classList.remove('scrolled');
+            navbar.style.boxShadow = 'none';
+        }
+    });
+    
+    window.addEventListener('resize', function() {
+        const updatedTopbarHeight = topbar.offsetHeight;
+        const updatedNavbarHeight = navbar.offsetHeight;
+        
+        navbar.style.top = updatedTopbarHeight + 'px';
+        document.body.style.paddingTop = (updatedTopbarHeight + updatedNavbarHeight) + 'px';
+    });
+};
+;
