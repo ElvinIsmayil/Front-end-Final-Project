@@ -1,0 +1,60 @@
+/* ===== ANIMATIONS ===== */
+/* These animations are custom and not available in Bootstrap */
+
+/* Fade In Down Animation */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-down {
+    animation: fadeInDown 0.3s ease-in-out;
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scroll Animation for Announcements */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Animated Text Elements - required for slider functionality */
+.animated-text {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s ease-in-out forwards;
+}
+
+.swiper-overlay .animated-text:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.swiper-overlay .animated-text:nth-child(2) {
+    animation-delay: 0.2s;
+}
+.swiper-overlay .animated-text:nth-child(3) {
+    animation-delay: 0.3s;
+}
+.swiper-overlay .animated-text:nth-child(4) {
+    animation-delay: 0.4s;
+} 

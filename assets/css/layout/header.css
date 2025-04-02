@@ -1,0 +1,337 @@
+/* ===== HEADER COMPONENTS ===== */
+
+/* Topbar - Required for JavaScript functionality */
+.topbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10000 !important; 
+    background-color: #333 !important;
+    width: 100% !important;
+    font-size: 0.85rem;
+}
+
+/* Keep these selectors as they control styles needed for header appearance */
+.topbar, 
+.topbar a, 
+.topbar .text-white,
+.topbar .dropdown-toggle,
+.topbar .social-icons a {
+    color: #cecece !important;
+}
+
+.topbar a {
+    transition: opacity 0.2s ease;
+}
+
+.topbar a:hover {
+    opacity: 0.85;
+}
+
+.free-delivery-notice {
+    letter-spacing: 0.3px;
+}
+
+/* Can use Bootstrap's fw-semibold in HTML */
+.free-delivery-notice strong {
+    font-weight: 600;
+}
+
+/* Social Icons */
+.social-icons a {
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-2px);
+}
+
+/* Social icons hover colors - specific branding */
+.social-icons a.facebook:hover {
+    color: #1877f2 !important; 
+}
+
+.social-icons a.instagram:hover {
+    color: #e1306c !important; 
+}
+
+.social-icons a.youtube:hover {
+    color: #ff0000 !important; 
+}
+
+.social-icons a.twitter:hover {
+    color: #1da1f2 !important; 
+}
+
+.social-icons a.pinterest:hover {
+    color: #e60023 !important; 
+}
+
+/* Navbar - Required for JavaScript functionality */
+.navbar {
+    position: fixed !important; 
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 9999 !important; 
+    background-color: #fff !important;
+    transition: all 0.3s ease !important;
+}
+
+.navbar .container-fluid {
+    position: relative;
+}
+
+.navbar-brand img {
+    max-width: 100%;
+    transition: all 0.2s ease;
+}
+
+/* Bootstrap handles this */
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem;
+}
+
+.navbar-collapse {
+    position: relative;
+    width: 100%;
+}
+
+/* ===== DROPDOWN MENUS ===== */
+/* Navbar dropdowns - Required for hover functionality */
+.navbar .dropdown {
+    position: relative;
+}
+
+/* Required for hover dropdown effect - not available in Bootstrap */
+.navbar .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+    margin-top: 10px;
+    min-width: 200px;
+}
+
+/* Mega Menu Styling */
+.mega-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0;
+    margin-top: 20px;
+    transform: translateY(10px);
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.navbar .dropdown:hover .mega-menu {
+    transform: translateY(0);
+}
+
+.mega-menu .dropdown-header {
+    color: #333;
+    font-weight: 600;
+    text-transform: capitalize;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.mega-menu .dropdown-item {
+    padding: 0.4rem 0;
+    font-size: 0.9rem;
+}
+
+.mega-menu .menu-featured img {
+    transition: transform 0.3s ease;
+}
+
+.mega-menu .menu-featured:hover img {
+    transform: scale(1.03);
+}
+
+/* Responsive mobile styling for mega menu */
+@media (max-width: 991.98px) {
+    .mega-menu {
+        position: static;
+        margin-top: 0;
+        box-shadow: none;
+    }
+    
+    .mega-menu .menu-featured {
+        margin-top: 1rem;
+    }
+    
+    .mega-menu .dropdown-item {
+        padding-left: 1rem;
+    }
+    
+    .mega-menu .dropdown-item:hover {
+        padding-left: 1.5rem;
+    }
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar .dropdown-item {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+    color: #333;
+    transition: all 0.2s ease;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: #f8f9fa;
+    padding-left: 1.8rem;
+    color: #000;
+}
+
+.navbar .dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.navbar .fa-chevron-down {
+    transition: transform 0.3s ease;
+}
+
+.navbar .dropdown-toggle::after {
+    display: none;
+}
+
+/* Topbar dropdowns - Required for hover functionality */
+.topbar-selectors .dropdown {
+    position: relative;
+}
+
+.topbar-selectors .nav-link {
+    font-size: 0.85rem;
+    font-weight: 400;
+    padding: 0.3rem 0.5rem;
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: color 0.2s ease;
+}
+
+.topbar-selectors .nav-link:hover {
+    color: #fff !important;
+}
+
+/* Required for hover dropdown effect - not available in Bootstrap */
+.topbar-selectors .dropdown-menu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.2s ease-in-out;
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    min-width: 120px;
+}
+
+.topbar-selectors .dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.topbar-selectors .dropdown-item {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.85rem;
+    color: #333;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Custom hover effect not available in Bootstrap */
+.topbar-selectors .dropdown-item:hover {
+    background-color: #f8f9fa;
+    padding-left: 1.8rem;
+    color: #000 !important;
+    font-weight: 500;
+}
+
+/* Override Bootstrap dropdown arrow */
+.dropdown-toggle::after {
+    display: none !important;
+}
+
+.topbar-selectors .dropdown-item.active {
+    background-color: transparent;
+    font-weight: 500;
+    color: #000;
+}
+
+.topbar-selectors .dropdown-item.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background-color: #333;
+}
+
+.topbar-selectors .fa-chevron-down {
+    font-size: 0.65rem;
+    transition: transform 0.3s ease;
+}
+
+.topbar-selectors .dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Nav Links Effects - custom animation not in Bootstrap */
+.navbar .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #000;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.navbar .nav-link:hover::after {
+    width: 50%;
+    opacity: 1;
+}
+
+/* Shop Icons - custom animations */
+.shop-icons a {
+    transition: transform 0.3s ease;
+}
+
+.shop-icons a:hover {
+    transform: translateY(-2px);
+}
+
+/* Can use Bootstrap's badge-sm in HTML */
+.shop-icons .badge {
+    font-size: 0.65rem;
+    padding: 0.25em 0.45em;
+} 
+

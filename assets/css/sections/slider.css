@@ -1,0 +1,152 @@
+/* ===== SLIDER/SWIPER COMPONENTS ===== */
+
+/* Slider Section - Bootstrap has w-100 py-3 */
+.slider-section {
+    width: 100%;
+    padding: 20px 0;
+}
+
+/* Bootstrap has container-fluid px-3 */
+.slider-section .container {
+    max-width: 100%;
+    padding: 0 15px;
+}
+
+/* Swiper Container - Bootstrap has w-100 rounded overflow-hidden */
+.swiper {
+    width: 100%;
+    height: 500px; 
+    margin: 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Bootstrap has w-100 h-100 d-flex align-items-center justify-content-center overflow-hidden position-relative */
+.swiper-slide {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content-center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Bootstrap has w-100 h-100 object-fit-cover */
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Navigation Buttons - custom styling for swiper */
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: white;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #f8f8f8;
+}
+
+.swiper-button-next {
+    right: 20px;
+}
+
+.swiper-button-prev {
+    left: 20px;
+}
+
+/* Slider Overlay Content - Bootstrap has mt-5 ms-4 */
+.swiper-overlay {
+    margin-top: 10rem;
+    margin-left: 3.5rem;
+}
+
+/* Swiper Navigation for New Arrivals */
+.arrivals-nav button {
+    width: 40px;
+    height: 40px;
+    z-index: 2;
+}
+
+/* Responsive Adjustments - Bootstrap has container-xxl but using custom heights */
+@media (min-width: 1400px) {
+    .slider-section .container {
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    
+    .swiper {
+        height: 600px; 
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1399px) {
+    .slider-section .container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    
+    .swiper {
+        height: 500px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .slider-section .container {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    
+    .swiper {
+        height: 400px;
+    }
+}
+
+@media (max-width: 767px) {
+    .swiper {
+        height: 300px;
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .swiper {
+        height: 250px; 
+    }
+    
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .swiper-button-next:after,
+    .swiper-button-prev:after {
+        font-size: 16px;
+    }
+} 

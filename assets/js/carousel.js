@@ -1,9 +1,73 @@
-document.addEventListener('DOMContentLoaded', function() {
-    swiperCarousel();
+document.addEventListener('DOMContentLoaded', function(){
+    testimonialSwiper()
     stickyHeader()
+    swiperCarousel();
 });
 
-function swiperCarousel() {
+function testimonialSwiper(){
+
+    const testimonialSwiper = new Swiper('.testimonialSwiper', {
+      loop: true,
+      
+      speed: 600,
+      
+      slidesPerView: 2,
+      
+      spaceBetween: 30,
+      
+      slidesPerGroup: 2,
+      
+      freeMode: false,
+      
+      centeredSlides: false,
+      
+      loopFillGroupWithBlank: true,
+      
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+          slidesPerGroup: 1,
+          spaceBetween: 20,
+          centeredSlides: false
+        },
+        768: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+          spaceBetween: 30,
+          centeredSlides: false
+        }
+      },
+      
+      a11y: {
+        prevSlideMessage: 'Previous testimonials',
+        nextSlideMessage: 'Next testimonials',
+      }
+    });
+    
+    const swiperContainer = document.querySelector('.testimonialSwiper');
+    if (swiperContainer) {
+      swiperContainer.addEventListener('mouseenter', function() {
+        testimonialSwiper.autoplay.stop();
+      });
+      
+      swiperContainer.addEventListener('mouseleave', function() {
+        testimonialSwiper.autoplay.start();
+      });
+}}
+
+
+
+  function swiperCarousel() {
     const swiper = new Swiper(".mySwiper", {
         navigation: {
             nextEl: ".swiper-button-next",
@@ -66,4 +130,3 @@ function swiperCarousel() {
         document.body.style.paddingTop = (updatedTopbarHeight + updatedNavbarHeight) + 'px';
     });
 };
-;

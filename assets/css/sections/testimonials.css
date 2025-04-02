@@ -1,0 +1,76 @@
+/* ===== TESTIMONIALS SECTION ===== */
+
+/* Testimonial Card - custom hover animation */
+.testimonial-card {
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* Avatar Container - custom border */
+.avatar-container {
+    width: 85px;
+    height: 85px;
+    border: 4px solid #f8f8f8;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+}
+
+/* Avatar Container - can use Bootstrap's rounded-circle overflow-hidden mx-auto mb-4 */
+.avatar-container {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1.5rem;
+}
+
+/* Bootstrap has w-100 h-100 object-fit-cover */
+.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Content Elements - can use Bootstrap's fw-semibold mb-3 text-dark */
+.service-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Bootstrap has text-warning mb-4 */
+.rating {
+    color: #ffb400;
+    margin-bottom: 1.5rem;
+}
+
+/* Bootstrap has fst-italic text-muted mb-4 */
+.testimonial-text {
+    font-style: italic;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Bootstrap has mt-3 */
+.client-info {
+    margin-top: 1rem;
+}
+
+/* Bootstrap has fw-semibold text-dark mb-1 */
+.client-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+/* Bootstrap has fs-6 text-muted */
+.client-position {
+    font-size: 0.85rem;
+    color: #777;
+} 

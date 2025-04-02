@@ -1,0 +1,51 @@
+/* ===== UTILITY CLASSES FOR SPACING AND LAYOUT ===== */
+
+/* Letter Spacing - Bootstrap doesn't have letter spacing utilities */
+.letter-spacing {
+    letter-spacing: 2px;
+}
+
+.letter-spacing-2 {
+    letter-spacing: 2px;
+}
+
+/* Title Separator - Bootstrap has border-bottom border-dark w-auto mx-auto */
+.title-separator {
+    width: 50px;
+    height: 2px;
+    background-color: #333;
+}
+
+/* Margin Utilities - Bootstrap has mt-5 but not this specific value */
+.top-collection-margin {
+    margin-top: 14rem;
+}
+
+/* Border Utilities - Bootstrap has border-bottom border-dark pb-1 */
+.top-collection-btn {
+    border-bottom: 1px solid black;
+    padding-bottom: 4px;
+}
+
+/* Container Width Utility - Bootstrap has container-fluid with max-width */
+.max-width-1400 {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive Spacing - Bootstrap has px-4 for larger padding */
+@media (min-width: 1400px) {
+    .container-fluid.max-width-1400 {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Container Responsiveness - Bootstrap has px-3 */
+@media (max-width: 992px) {
+    .container-fluid {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+} 

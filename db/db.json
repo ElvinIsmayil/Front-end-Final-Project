@@ -87,6 +87,72 @@
       "rating": 5,
       "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922",
       "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_13_720x.png?v=1733810923"
+    },
+    {
+      "id": "7",
+      "name": "Vintage Washed Denim Jacket",
+      "price": 89.99,
+      "azn_price": 152.98,
+      "usd_price": 89.99,
+      "eur_price": 82.49,
+      "rating": 4,
+      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922",
+      "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_07_720x.png?v=1733810922"
+    },
+    {
+      "id": "8",
+      "name": "Premium Cotton Hoodie",
+      "price": 59.99,
+      "azn_price": 101.98,
+      "usd_price": 59.99,
+      "eur_price": 54.99,
+      "rating": 5,
+      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922",
+      "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_13_720x.png?v=1733810923"
+    },
+    {
+      "id": "7",
+      "name": "Vintage Washed Denim Jacket",
+      "price": 89.99,
+      "azn_price": 152.98,
+      "usd_price": 89.99,
+      "eur_price": 82.49,
+      "rating": 4,
+      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922",
+      "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_07_720x.png?v=1733810922"
+    },
+    {
+      "id": "8",
+      "name": "Premium Cotton Hoodie",
+      "price": 59.99,
+      "azn_price": 101.98,
+      "usd_price": 59.99,
+      "eur_price": 54.99,
+      "rating": 5,
+      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922",
+      "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_13_720x.png?v=1733810923"
+    },
+    {
+      "id": "7",
+      "name": "Vintage Washed Denim Jacket",
+      "price": 89.99,
+      "azn_price": 152.98,
+      "usd_price": 89.99,
+      "eur_price": 82.49,
+      "rating": 4,
+      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922",
+      "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_07_720x.png?v=1733810922"
+    },
+    {
+      "id": "8",
+      "name": "Premium Cotton Hoodie",
+      "price": 59.99,
+      "azn_price": 101.98,
+      "usd_price": 59.99,
+      "eur_price": 54.99,
+      "rating": 5,
+      "image": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_15_720x.png?v=1733810922",
+      "hoverImage": "https://rivon-demo.myshopify.com/cdn/shop/files/Fashion_13_720x.png?v=1733810923"
     }
   ]
 }

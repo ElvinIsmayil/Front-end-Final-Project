@@ -1,0 +1,72 @@
+/* ===== BRAND LOGO SECTION ===== */
+
+/* Brand Logo Image - custom animation */
+.brand-img {
+    max-width: 120px;
+    opacity: 0.75;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.brand-img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Promotional Banner - can use Bootstrap's position-relative overflow-hidden */
+.promotional-banner {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Bootstrap has position-relative z-index-1 */
+.promotional-text {
+    position: relative;
+    z-index: 1;
+}
+
+/* Bootstrap doesn't have watermark positioning */
+.brand-watermark {
+    position: absolute;
+    bottom: -30px;
+    left: -10px;
+    font-size: 140px;
+    font-weight: 800;
+    opacity: 0.05;
+    letter-spacing: 5px;
+    z-index: 0;
+}
+
+/* Bootstrap has position-relative z-index-2 */
+.circular-logo {
+    position: relative;
+    z-index: 2;
+}
+
+.circular-logo img {
+    max-width: 140px;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+/* Responsive Adjustments - custom values */
+@media (max-width: 768px) {
+    .brand-img {
+        max-width: 100px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .brand-img {
+        max-width: 80px;
+    }
+    
+    .brand-watermark {
+        font-size: 90px;
+    }
+    
+    .promotional-banner h5 {
+        font-size: 3rem;
+    }
+} 

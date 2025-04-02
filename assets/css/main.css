@@ -1,0 +1,16 @@
+@import 'base.css';
+
+@import 'layout/header.css';
+
+@import 'components/cards.css';
+@import 'components/media.css';
+
+@import 'sections/slider.css';
+@import 'sections/announcement.css';
+@import 'sections/featured-products.css';
+@import 'sections/testimonials.css';
+@import 'sections/shop-look.css';
+@import 'sections/brands.css';
+
+@import 'utilities/animations.css';
+@import 'utilities/spacing.css'; 
