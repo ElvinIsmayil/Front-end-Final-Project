@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>All Products - Rivon</title>
+  <title>Shopping Cart - Rivon</title>
   <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="./assets/lib/font-awesome/all.css" />
   <link rel="stylesheet" href="./assets/lib/swiper/swiper-bundle.min.css" />
@@ -143,11 +143,11 @@
                 Shop <i class="fas fa-chevron-down ms-1 small"></i>
               </a>
               <div class="dropdown-menu fade-down">
-                <a class="dropdown-item" href="#">Shop Grid</a>
+                <a class="dropdown-item" href="./all-products.html">Shop Grid</a>
                 <a class="dropdown-item" href="#">Shop List</a>
                 <a class="dropdown-item" href="#">Product Details</a>
-                <a class="dropdown-item" href="#">Shopping Cart</a>
-                <a class="dropdown-item" href="#">Checkout</a>
+                <a class="dropdown-item active" href="./cart.html">Shopping Cart</a>
+                <a class="dropdown-item" href="./checkout.html">Checkout</a>
               </div>
             </li>
 
@@ -195,10 +195,18 @@
             <a href="#" class="text-dark ms-2 ms-md-3">
               <i class="fa-light fa-magnifying-glass fs-5"></i>
             </a>
-            <a href="#" class="text-dark ms-2 ms-md-3 position-relative">
+            <a
+              href="#"
+              class="text-dark ms-2 ms-md-3 position-relative"
+              id="wishlistToggle"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#wishlistOffcanvas"
+              aria-controls="wishlistOffcanvas"
+            >
               <i class="fa-light fa-heart fs-5"></i>
               <span
-                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark favorite-count"
+                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark wishlist-count"
+                style="display: none;"
                 >0</span
               >
             </a>
@@ -224,41 +232,218 @@
 
 
   <main>
-    <section class="all-products py-5">
-      <div class="container-fluid px-md-5 px-lg-5 px-xl-5 max-width-1400">
-        <div class="section-header text-center mb-5">
-          <h6 class="text-uppercase fw-bold text-muted letter-spacing-2 mb-2">Our Collection</h6>
-          <h2 class="fw-bold mb-3">All Products</h2>
-          <div class="title-separator mx-auto mb-3"></div>
-          <p class="text-muted col-md-8 mx-auto">Explore our complete collection of premium quality products. Find the perfect items that match your style and preferences.</p>
+    <section class="page-header bg-light py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="display-5 fw-bold mb-3">Shopping Cart</h1>
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb justify-content-center">
+                <li class="breadcrumb-item"><a href="./index.html" class="text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Shopping Cart</li>
+              </ol>
+            </nav>
+          </div>
         </div>
-        
-        <div class="product-filter mb-4">
-          <ul class="nav nav-pills justify-content-center">
-            <li class="nav-item">
-              <a class="nav-link active" href="#" data-filter="all">All Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-filter="new">New Arrivals</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-filter="best">Best Sellers</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-filter="sale">On Sale</a>
-            </li>
-          </ul>
-        </div>
-        
-        <div class="products-grid">
-          <div class="row g-4">
-            <div id="all-cards-wrapper" class="row g-4">
+      </div>
+    </section>
+
+    <section class="cart-section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div id="empty-cart" class="text-center py-5" style="display: none;">
+              <div class="mb-4">
+                <i class="fa-light fa-shopping-bag fa-4x text-muted"></i>
+              </div>
+              <h3>Your cart is empty</h3>
+              <p class="text-muted mb-4">Looks like you haven't added any products to your cart yet.</p>
+              <a href="./all-products.html" class="btn btn-dark px-4 py-2">Continue Shopping</a>
+            </div>
+
+            <div id="cart-content">
+              <div class="table-responsive mb-4">
+                <table class="table align-middle">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="border-0 ps-0">Product</th>
+                      <th scope="col" class="border-0 text-center">Price</th>
+                      <th scope="col" class="border-0 text-center">Quantity</th>
+                      <th scope="col" class="border-0 text-center">Total</th>
+                      <th scope="col" class="border-0 text-end pe-0"></th>
+                    </tr>
+                  </thead>
+                  <tbody id="cart-items">
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="d-flex flex-wrap justify-content-between mb-5">
+                <div class="d-flex mb-3 mb-md-0">
+                  <input type="text" class="form-control me-2" placeholder="Coupon code">
+                  <button class="btn btn-outline-dark">Apply Coupon</button>
+                </div>
+                <button id="clear-cart" class="btn btn-outline-danger">Clear Cart</button>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 offset-md-6">
+                  <div class="card border-0 bg-light">
+                    <div class="card-body p-4">
+                      <h4 class="mb-4">Cart Totals</h4>
+                      <div class="d-flex justify-content-between mb-3">
+                        <span>Subtotal</span>
+                        <span id="cart-subtotal" class="fw-bold">$0.00</span>
+                      </div>
+                      <div class="d-flex justify-content-between mb-3">
+                        <span>Shipping</span>
+                        <span>Free</span>
+                      </div>
+                      <hr>
+                      <div class="d-flex justify-content-between mb-4">
+                        <span class="fw-bold">Total</span>
+                        <span id="cart-total" class="fw-bold">$0.00</span>
+                      </div>
+                      <a href="./checkout.html" class="btn btn-dark w-100 py-2 fw-medium">Proceed to Checkout</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer bg-success-subtle py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <h5 class="fw-bold mb-3">Contact Info</h5>
+          <p class="mb-1">
+            70 Washington Square South, New York, NY 10012, United States
+          </p>
+          <p class="mb-1">Email: info@fashionshop.com</p>
+          <p class="mb-1">Phone: (212)555-1234</p>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h5 class="fw-bold mb-3">Our Store</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >Full Grooming</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >Bath and Dry</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >Styling</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >Medical Bath</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h5 class="fw-bold mb-3">Useful Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >Login</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >My account</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >Wishlist</a
+              >
+            </li>
+            <li class="mb-2">
+              <a href="#" class="text-decoration-none text-secondary"
+                >Checkout</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <h5 class="fw-bold mb-3">Sign Up for Email</h5>
+          <p class="mb-3">
+            Subscribe to our newsletter to receive news on update.
+          </p>
+          <div class="input-group">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Enter your email"
+            />
+            <button class="btn btn-dark" type="button">Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4" />
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-md-0 text-muted">© 2025, Rivon Shopify Theme</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+          <div class="payment-icons">
+            <img
+              src="assets/images/payment-icons/visa.svg"
+              alt="Visa"
+              class="ms-2"
+              height="24"
+            />
+            <img
+              src="assets/images/payment-icons/mastercard.svg"
+              alt="Mastercard"
+              class="ms-2"
+              height="24"
+            />
+            <img
+              src="assets/images/payment-icons/amex.svg"
+              alt="American Express"
+              class="ms-2"
+              height="24"
+            />
+            <img
+              src="assets/images/payment-icons/paypal.svg"
+              alt="PayPal"
+              class="ms-2"
+              height="24"
+            />
+            <img
+              src="assets/images/payment-icons/diners.svg"
+              alt="Diners Club"
+              class="ms-2"
+              height="24"
+            />
+            <img
+              src="assets/images/payment-icons/discover.svg"
+              alt="Discover"
+              class="ms-2"
+              height="24"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <div class="offcanvas offcanvas-end cart-offcanvas overlay-navbar" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
     <div class="offcanvas-header">
@@ -270,7 +455,6 @@
     </div>
     <div class="offcanvas-body px-0 py-0">
       <div class="cart-items-container">
-        <!-- Cart items will be loaded here via JavaScript -->
       </div>
       
       <div class="cart-summary p-3 pt-4 border-top mt-auto">
@@ -279,8 +463,30 @@
           <h5 class="fw-semibold m-0">$0.00 USD</h5>
         </div>
         <div class="d-grid gap-3">
-          <a href="./cart.html" class="btn btn-outline-dark py-2 fw-medium cart-view-btn" onclick="window.location.href='./cart.html';">View Cart</a>
-          <a href="./checkout.html" class="btn btn-dark py-2 fw-medium checkout-btn" onclick="window.location.href='./checkout.html';">Check Out</a>
+          <a href="./cart.html" class="btn btn-outline-dark py-2 fw-medium">View Cart</a>
+          <a href="./checkout.html" class="btn btn-dark py-2 fw-medium">Check Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="offcanvas offcanvas-end wishlist-offcanvas overlay-navbar" data-bs-scroll="true" tabindex="-1" id="wishlistOffcanvas" aria-labelledby="wishlistOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-heart text-danger me-2"></i>
+        <h5 class="offcanvas-title m-0" id="wishlistOffcanvasLabel">Your Wishlist</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0 py-0">
+      <div class="wishlist-items-container">
+        <!-- Wishlist items will be loaded here via JavaScript -->
+      </div>
+      
+      <div class="wishlist-summary p-3 pt-4 border-top mt-auto">
+        <div class="d-grid gap-3">
+          <a href="./wishlist.html" class="btn btn-outline-dark py-2 fw-medium">View Wishlist</a>
+          <a href="./all-products.html" class="btn btn-dark py-2 fw-medium">Continue Shopping</a>
         </div>
       </div>
     </div>

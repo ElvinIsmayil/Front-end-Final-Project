@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Wishlist - Rivon</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon.png">
+  
+ 
+  <link rel="stylesheet" href="./assets/lib/bootstrap/css/bootstrap.min.css">
+  
+  
+  <link rel="stylesheet" href="./assets/lib/font-awesome/all.css">
+  
+  <link rel="stylesheet" href="./assets/lib/swiper/swiper-bundle.min.css">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+  
+
+  <div id="header-placeholder"></div>
+  
+  <main>
+    <section class="wishlist-section py-5">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h6 class="text-uppercase fw-bold text-muted letter-spacing-2 mb-2">My Items</h6>
+          <h2 class="fw-bold mb-3">Wishlist</h2>
+          <div class="title-separator mx-auto mb-3"></div>
+          <p class="text-muted col-md-8 mx-auto">Manage your wishlist items. Move them to your cart when you're ready to purchase.</p>
+        </div>
+        
+     
+        <div id="empty-wishlist" class="text-center py-5" style="display: none;">
+          <div class="mb-4">
+            <i class="fa-light fa-heart fa-4x text-muted"></i>
+          </div>
+          <h5 class="mb-3">Your wishlist is empty</h5>
+          <p class="text-muted mb-4">Browse our products and add items to your wishlist.</p>
+          <a href="all-products.html" class="btn btn-dark px-4">Shop Now</a>
+        </div>
+        
+      
+        <div id="wishlist-content" class="mt-4">
+          <div class="table-responsive">
+            <table class="table align-middle">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th class="text-center">Price</th>
+                  <th class="text-end">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="wishlist-items">
+              </tbody>
+            </table>
+          </div>
+          
+          <div class="d-flex justify-content-between align-items-center mt-4">
+            <button id="clear-wishlist" class="btn btn-outline-danger">Clear Wishlist</button>
+            <a href="all-products.html" class="btn btn-dark">Continue Shopping</a>
+          </div>
+          
+          <div class="mt-4">
+            <button id="debug-wishlist" class="btn btn-sm btn-secondary">Debug Wishlist</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <div class="offcanvas offcanvas-end cart-offcanvas overlay-navbar" data-bs-scroll="true" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-check-circle text-success me-2"></i>
+        <h5 class="offcanvas-title m-0" id="cartOffcanvasLabel">Your Shopping Cart</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0 py-0">
+      <div class="cart-items-container">
+      </div>
+      
+      <div class="cart-summary p-3 pt-4 border-top mt-auto">
+        <div class="d-flex justify-content-between mb-4 align-items-center">
+          <h5 class="fw-semibold m-0">Subtotal</h5>
+          <h5 class="fw-semibold m-0">$0.00 USD</h5>
+        </div>
+        <div class="d-grid gap-3">
+          <a href="./cart.html" class="btn btn-outline-dark py-2 fw-medium">View Cart</a>
+          <a href="./checkout.html" class="btn btn-dark py-2 fw-medium">Check Out</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="offcanvas offcanvas-end wishlist-offcanvas overlay-navbar" data-bs-scroll="true" tabindex="-1" id="wishlistOffcanvas" aria-labelledby="wishlistOffcanvasLabel">
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center">
+        <i class="fa-solid fa-heart text-danger me-2"></i>
+        <h5 class="offcanvas-title m-0" id="wishlistOffcanvasLabel">Your Wishlist</h5>
+      </div>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0 py-0">
+      <div class="wishlist-items-container">
+      </div>
+      
+      <div class="wishlist-summary p-3 pt-4 border-top mt-auto">
+        <div class="d-grid gap-3">
+          <a href="./wishlist.html" class="btn btn-outline-dark py-2 fw-medium">View Wishlist</a>
+          <a href="./all-products.html" class="btn btn-dark py-2 fw-medium">Continue Shopping</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./assets/lib/font-awesome/all.js"></script>
+  <script src="./assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="./assets/lib/swiper/swiper-bundle.min.js"></script>
+  <script src="./node_modules/axios/dist/axios.min.js"></script>
+  <script src="./assets/js/main.js" type="module"></script>
+  <script src="./assets/js/pages/wishlistInit.js" type="module"></script>
+</body>
+</html> 

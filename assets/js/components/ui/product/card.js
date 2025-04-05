@@ -1,8 +1,32 @@
 import { convertRatingToStars } from "../../../utils/helper.js";
+import { isInWishlist } from "../../../store/wishlist.js";
 
 function productCardTemplate(product) {
   const hasHoverImage = product.hoverImage && product.hoverImage.trim() !== "";
   const starRating = convertRatingToStars(product.rating);
+  
+  
+  const productId = product.id || Date.now();
+  
+  
+  const isWishlisted = isInWishlist(String(productId));
+  const heartIcon = isWishlisted ? 'fa-solid fa-heart text-dark' : 'fa-light fa-heart';
+  const wishlistTitle = isWishlisted ? 'Remove from wishlist' : 'Add to wishlist';
+  
+  
+  const safeProduct = {
+    ...product,
+    id: productId
+  };
+  
+  
+  let productDataAttr = '';
+  try {
+    productDataAttr = JSON.stringify(safeProduct);
+  } catch (err) {
+    console.error('Error stringifying product data:', err);
+    productDataAttr = JSON.stringify({ id: productId, name: product.name || 'Product' });
+  }
   
   return `
   <div class="card product-card border-0">
@@ -22,20 +46,20 @@ function productCardTemplate(product) {
       
       <div class="product-actions position-absolute bottom-0 start-50 translate-middle-x mb-3 d-flex gap-2 opacity-0" 
            style="transition: opacity 0.3s ease;">
-        <button class="btn action-btn btn-sm btn-light rounded-circle" onclick="quickView(${product.id})" aria-label="Quick view">
+        <button class="btn action-btn btn-sm btn-light rounded-circle" data-action="quick-view" data-product-id="${productId}" data-product-data='${productDataAttr}' aria-label="Quick view">
           <i class="fa-light fa-eye"></i>
         </button>
-        <button class="btn action-btn btn-sm btn-light rounded-circle" onclick="addToCart(${product.id}, 1)" aria-label="Add to cart">
+        <button class="btn action-btn btn-sm btn-light rounded-circle" data-action="add-to-cart" data-product-id="${productId}" data-product-data='${productDataAttr}' aria-label="Add to cart">
           <i class="fa-regular fa-plus-large"></i>
         </button>
-        <button class="btn action-btn btn-sm btn-light rounded-circle" onclick="addToWishlist(${product.id})" aria-label="Add to wishlist">
-          <i class="fa-light fa-heart"></i>
+        <button class="btn action-btn btn-sm btn-light rounded-circle" data-action="add-to-wishlist" data-product-id="${productId}" data-product-data='${productDataAttr}' title="${wishlistTitle}" aria-label="${wishlistTitle}">
+          <i class="${heartIcon}"></i>
         </button>
       </div>
     </div>
     
     <div class="card-body text-center p-0 mt-3">
-      ${starRating ? 
+      ${product.rating ? 
         `<div class="rating mb-2">
           ${starRating}
         </div>` : ''}

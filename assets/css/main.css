@@ -1,29 +1,17 @@
-@import 'foundation/variables.css';
-@import 'foundation/reset.css';
 @import 'foundation/base.css';
 
 @import 'layout/header.css';
-@import 'layout/footer.css';
-@import 'layout/grid.css';
 
-@import 'components/buttons.css';
 @import 'components/cards.css';
-@import 'components/forms.css';
-@import 'components/product/card.css';
 @import 'components/back-to-top.css';
 
-@import 'blocks/hero.css';
 @import 'blocks/testimonials.css';
-@import 'blocks/team.css';
 @import 'blocks/announcement.css';
 @import 'blocks/featured-products.css';
 @import 'blocks/brands.css';
 @import 'blocks/shop-look.css';
 @import 'blocks/slider.css';
-@import 'blocks/instagram.css';
 @import 'blocks/product-showcase.css';
 
 @import 'utilities/spacing.css';
 @import 'utilities/animations.css';
-@import 'utilities/typography.css';
-@import 'utilities/display.css'; 
